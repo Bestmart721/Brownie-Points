@@ -36,14 +36,19 @@ class User(Account):
 
     def get_coins(self):
         return self.coins
-
-    def login(self, input_email, input_password):
-        if (input_email == self.get_email()):
-            pass
-
     def add_coins(self,hours):
         self.coins += hours
         return None
+
+    def login(self, input_email, input_password):
+        if (input_email == self.email):
+            if (input_password == self.password):
+                return self.get_name()
+            else:
+                return "Wrong password"
+        else:
+            return "No such email"
+
 
     def buy_discount(self,code):
         if self.coins > code.get_cost():
@@ -52,7 +57,6 @@ class User(Account):
         else:
             print("Not enough coins.")
         return
-
     
     def show_discounts(self):
         print("You have discount codes for the following:")

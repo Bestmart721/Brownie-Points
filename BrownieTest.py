@@ -24,3 +24,7 @@ brandon.buy_discount(coffee)
 brandon.buy_discount(temp)
 
 brandon.show_discounts()
+
+print(brandon.login("wrong@email.edu", "password"))
+print(brandon.login("bsw@drexel.edu", "password"))
+print(brandon.login("bsw@drexel.edu", "coinpass"))
