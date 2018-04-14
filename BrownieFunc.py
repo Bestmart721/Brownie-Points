@@ -25,6 +25,15 @@ class Account:
         return self.email
     def set_password(self,new_password):
         self.password = new_password
+
+    def login(self, input_email, input_password):
+        if (input_email == self.email):
+            if (input_password == self.password):
+                return self.get_name()
+            else:
+                return "Wrong password"
+        else:
+            return "No such email"
         
 
 
@@ -39,15 +48,6 @@ class User(Account):
     def add_coins(self,hours):
         self.coins += hours
         return None
-
-    def login(self, input_email, input_password):
-        if (input_email == self.email):
-            if (input_password == self.password):
-                return self.get_name()
-            else:
-                return "Wrong password"
-        else:
-            return "No such email"
 
 
     def buy_discount(self,code):
