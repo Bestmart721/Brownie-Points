@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register for Brownie Points</title>
+  <style>
+    .centered {
+      text-align: center;
+    }
+    .endform {
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="centered">Register</h1>
+  <p class="error">
+    {{ e }}
+  </p>
+  <form name="reg" action="/register" method="POST">
+    <h4>Full Name</h4>
+    <input name="name" type="text" maxlength="50" placeholder="Johnny Appleseed" />
+    <h4>Email Address</h4>
+    <input name="email" type="email" maxlength="100" placeholder="jappleseed@gmail.com" />
+    <h4>Password</h4>
+    <p>Passwords must be at least 8 characters</p>
+    <input name="password" type="password" />
+    <h4>Confirm Password</h4>
+    <input name="confirm" type="password" />
+    <br />
+    <input type="submit" class="endform"/>
+  </form>
+</body>
+</html>
