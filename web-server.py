@@ -107,12 +107,7 @@ def shop():
 
 @app.route("/events")
 def events():
-    try:
-        uid = session["uid"]
-        events = brownie.event_get_all()
-        return render_template("events.html", events=events)
-    except KeyError:
-        return redirect("/", code=302)
+    return render_template("events.html", events=events)
 
 # Generate a QR code from the URL value
 @app.route("/qr/<code>")
