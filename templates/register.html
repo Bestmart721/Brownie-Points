@@ -1,18 +1,175 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Register for Brownie Points</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <style>
-    .centered {
-      text-align: center;
+    .navbar-brand {
+      position: relative;
+      z-index: 2;
     }
-    .endform {
-      margin-top: 2em;
+
+    .navbar-nav.navbar-right .btn {
+      position: relative;
+      z-index: 2;
+      padding: 4px 20px;
+      margin: 10px auto;
+    }
+
+    .navbar .navbar-collapse {
+      position: relative;
+    }
+
+    .navbar .navbar-collapse .navbar-right>li:last-child {
+      padding-left: 22px;
+    }
+
+    .navbar .nav-collapse {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding-right: 120px;
+      padding-left: 80px;
+      width: 100%;
+    }
+
+    .navbar.navbar-default .nav-collapse {
+      background-color: #f8f8f8;
+    }
+
+    .navbar.navbar-inverse .nav-collapse {
+      background-color: #222;
+    }
+
+    .navbar .nav-collapse .navbar-form {
+      border-width: 0;
+      box-shadow: none;
+    }
+
+    .nav-collapse>li {
+      float: right;
+    }
+
+    .btn.btn-circle {
+      border-radius: 50px;
+    }
+
+    .btn.btn-outline {
+      background-color: transparent;
+    }
+
+    @media screen and (max-width: 767px) {
+      .navbar .navbar-collapse .navbar-right>li:last-child {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .navbar .nav-collapse {
+        margin: 7.5px auto;
+        padding: 0;
+      }
+      .navbar .nav-collapse .navbar-form {
+        margin: 0;
+      }
+      .nav-collapse>li {
+        float: none;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1 class="centered">Register</h1>
+  <div class="container-fluid">
+    <!-- Second navbar for categories -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Volunteer Points</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/rewards">Rewards</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- /.navbar -->
+  </div>
+  <div class="container-fluid" style="margin-top: 15%;">
+    <section class="container">
+      <div class="container-page">
+        <form action="/register" method="POST">
+          <div class="col-md-6">
+            <h3 class="dark-grey">Registration</h3>
+            <div class="form-group col-lg-12">
+              <label>Full Name</label>
+              <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group col-lg-6">
+              <label>Email Address</label>
+              <input type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group col-lg-6">
+              <label>Confirm Email Address</label>
+              <input type="email" name="confirmEmail" class="form-control">
+            </div>
+            <div class="form-group col-lg-6">
+              <label>Password</label>
+              <input type="password" name="password" class="form-control">
+            </div>
+            <div class="form-group col-lg-6">
+              <label>Confirm Password</label>
+              <input type="password" name="confirmPassword" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3 class="dark-grey">Terms and Conditions</h3>
+            <p>
+              By clicking on "Register" you agree to <b>Service Points</b>' Terms and Conditions.
+            </p>
+            <p>
+              While controlled, the value of volunteer points in discount offers is subject to natural change. Service Points is not liable for any changes in the value of volunteer points but does work to limit fluctuations.
+            </p>
+            <p>
+              Should an issue arise between a Service Points customer and a Service Points sponsor, Service Points will not be liable, but will help in resolving the issue.
+            </p>
+            <p>
+              Service Points users must be 18 years or older to create and account and start earning points.
+            </p>
+            <p style="color: red;">
+              {{ e }}
+            </p>
+            <input type="submit" class="btn btn-primary" value="Register">
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
+<!-- <h1 class="centered">Register</h1>
   <p class="error">
     {{ e }}
   </p>
@@ -28,6 +185,4 @@
     <input name="confirm" type="password" />
     <br />
     <input type="submit" class="endform"/>
-  </form>
-</body>
-</html>
+  </form> -->

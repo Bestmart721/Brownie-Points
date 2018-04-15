@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Browse Rewards</title>
+  <style>
+    .centered {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="centered">Browse for Rewards</h1>
+  <table>
+    {% for reward in rewards %}
+      <tr>
+        <td>
+          {{ reward.sponsor }}
+        </td>
+        <td>
+          {{ reward.description }}
+        </td>
+        <td>
+          {{ reward.cost }}
+        </td>
+        <td>
+          <button onclick="document.location='/select/{{ reward.id }}'">Select</button>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Volunteer Opportunities</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style>
+    .container,
+    .container-fluid {
+      margin-top: 15px;
+    }
+
+    tr>td.media-left {
+      width: 72px !important;
+      height: 30px;
+      padding: 0 10px;
+      background-color: #eee;
+    }
+
+    .table .media .media-body>span {
+      color: #999;
+    }
+
+    .table .media .media-body span strong {
+      color: #777;
+    }
+    .navbar-brand {
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar-nav.navbar-right .btn {
+      position: relative;
+      z-index: 2;
+      padding: 4px 20px;
+      margin: 10px auto;
+    }
+
+    .navbar .navbar-collapse {
+      position: relative;
+    }
+
+    .navbar .navbar-collapse .navbar-right>li:last-child {
+      padding-left: 22px;
+    }
+
+    .navbar .nav-collapse {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding-right: 120px;
+      padding-left: 80px;
+      width: 100%;
+    }
+
+    .navbar.navbar-default .nav-collapse {
+      background-color: #f8f8f8;
+    }
+
+    .navbar.navbar-inverse .nav-collapse {
+      background-color: #222;
+    }
+
+    .navbar .nav-collapse .navbar-form {
+      border-width: 0;
+      box-shadow: none;
+    }
+
+    .nav-collapse>li {
+      float: right;
+    }
+
+    .btn.btn-circle {
+      border-radius: 50px;
+    }
+
+    .btn.btn-outline {
+      background-color: transparent;
+    }
+
+    @media screen and (max-width: 767px) {
+      .navbar .navbar-collapse .navbar-right>li:last-child {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .navbar .nav-collapse {
+        margin: 7.5px auto;
+        padding: 0;
+      }
+      .navbar .nav-collapse .navbar-form {
+        margin: 0;
+      }
+      .nav-collapse>li {
+        float: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- Second navbar for categories -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Volunteer Points</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/rewards">Rewards</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- /.navbar -->
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <table id="tableReport" class="table table-hover table-striped ">
+          <tbody>
+            <tr class="media" id="carga_30" data-id="30">
+              <td class="media-left">
+                <h2>30</h2>
+              </td>
+              <td class="media-body">
+                <h4 class="media-heading font-yellow text-bold hidden-xs">ELIAS DO CARMO DA SILVA</h4>
+                <h4 class="media-heading font-yellow text-bold hidden-sm hidden-md hidden-lg hidden-xl">ELIAS SILVA</h4>
+                <span><strong>Status:</strong> <span class="label label-info">Carregando</span></span>
+                <span><strong>Tipo:</strong> Conjugada</span>
+                <span class="hidden-xs"><strong>Origem:</strong> Frios Completa</span>
+                <span class="hidden-xs"><strong>Valor:</strong> R$ 9.450,00</span>
+                <span class="hidden-xs"><strong>Peso:</strong> 2.400 KG</span>
+                <span class="hidden-xs"><strong>Cubage:</strong> 3 m³</span>
+              </td>
+            </tr>
+            <tr class="media" id="carga_20" data-id="20">
+              <td class="media-left">
+                <h2>20</h2>
+              </td>
+              <td class="media-body">
+                <h4 class="media-heading font-yellow text-bold hidden-xs">CELIO JOAQUIM DA COSTA</h4>
+                <h4 class="media-heading font-yellow text-bold hidden-sm hidden-md hidden-lg hidden-xl">CELIO COSTA</h4>
+                <span><strong>Status:</strong> <span class="label label-info">Carregando</span></span>
+                <span><strong>Tipo:</strong> Conjugada</span>
+                <span class="hidden-xs"><strong>Origem:</strong> Complemento Horti</span>
+                <span class="hidden-xs"><strong>Valor:</strong> R$ 9.450,00</span>
+                <span class="hidden-xs"><strong>Peso:</strong> 2.400 KG</span>
+                <span class="hidden-xs"><strong>Cubage:</strong> 3 m³</span>
+              </td>
+            </tr>
+            <tr class="media" id="carga_10" data-id="10">
+              <td class="media-left">
+                <h2>10</h2>
+              </td>
+              <td class="media-body">
+                <h4 class="media-heading font-yellow text-bold hidden-xs">ELJHONNY FERREIRA BRAZ</h4>
+                <h4 class="media-heading font-yellow text-bold hidden-sm hidden-md hidden-lg hidden-xl">ELJHONNY BRAZ</h4>
+                <span><strong>Status:</strong> <span class="label label-info">Carregando</span></span>
+                <span><strong>Tipo:</strong> Normal</span>
+                <span class="hidden-xs"><strong>Origem:</strong> Seca Completa</span>
+                <span class="hidden-xs"><strong>Valor:</strong> R$ 9.450,00</span>
+                <span class="hidden-xs"><strong>Peso:</strong> 2.400 KG</span>
+                <span class="hidden-xs"><strong>Cubage:</strong> 3 m³</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<!-- <h1 class="centered">Volunteer Opportunities</h1>
+<table>
+{% for event in events %}
+<tr>
+<td>
+{{ event.sponsor }}
+</td>
+<td>
+{{ event.title }}
+</td>
+<td>
+{{ event.location }}
+</td>
+<td>
+{{ event.time }} on {{ event.date }}
+</td>
+<td>
+</tr>
+{% endfor %}
+</table> -->

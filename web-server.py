@@ -1,10 +1,12 @@
 # Import necessary modules
 from flask import Flask, render_template, request, send_from_directory
+# from flask_bootstrap import Bootstrap
 from pyqrcode import create as qrgen
 from re import match
 
 # Creating the Flask app
 app = Flask(__name__)
+# Bootstrap(app)
 
 # Route user to the index (home) page
 @app.route("/")
@@ -21,6 +23,9 @@ def signup():
 def register():
     # Pull the data from the POST request
     data = request.form
+    # Emails must match
+    if not data["email"] == data["confirmEmail"]:
+        return render_template("register.html", e="Emails do not match")
     # Validate the submitted email's format
     if not match(r"[^@]+@[^@]+\.[^@]+", data["email"]):
         return render_template("register.html", e="Invalid email address format")
@@ -34,7 +39,7 @@ def register():
     if len(data["password"]) < 8:
         return render_template("register.html", e="Password is too short")
     # Submitted passwords must match
-    if not data["password"] == data["confirm"]:
+    if not data["password"] == data["confirmPassword"]:
         return render_template("register.html", e="Passwords do not match")
     # TODO Facilitate user's insertation into database
     # If registration is successful, send user to login page
@@ -52,21 +57,31 @@ def login():
     data = request.form
     # TODO Compare the submitted credentials with those in the database
     # TODO if something goes wrong, route back to login with error message, otherwise route to the rewards page
-        return render_template("login.html", e="Invalid user credentials")
+    # return render_template("login.html", e="Invalid user credentials")
     # Send users to the rewards page if their login was successful
     return render_template("rewards.html")
 
 # Route user to the rewards page
 @app.route("/rewards")
 def rewards():
-    # TODO fetch the live point values from the database
+    # TODO Fetch the live point values from the database
     # Setting dummy demonstration pointss
     points = 42
     # Setting dummy demonstration discounts
     # TODO Fetch the user's actual discounts
-    codes = [["Starbucks", "Half off a cup of coffee", "WGWXEF"], ["Home Depot", "25% off painting supplies", "NEVSDF"], ["Taco Bell", "1 Free Doritos Loco Taco", "ATTCWT"]] # get_user_codes[user]
+    discounts = [["Starbucks", "Half off a cup of coffee", "WGWXEF"], ["Home Depot", "25% off painting supplies", "NEVSDF"], ["Taco Bell", "1 Free Doritos Loco Taco", "ATTCWT"]] # get_user_codes[user]
     # Present the rewards page with points and discounts
-    return render_template("rewards.html", rewards=codes, points=points)
+    return render_template("rewards.html", rewards=discounts, points=points)
+
+@app.route("/shop")
+def shop():
+    # TODO Fetch live discount offers from database
+    return render_template("shop.html", rewards=rewards)
+
+@app.route("/events")
+def events():
+    # TODO Fetch live events list from database
+    return render_template("events.html")
 
 # Generate a QR code from the URL value
 @app.route("/qr/<code>")
