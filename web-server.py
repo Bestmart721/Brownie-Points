@@ -112,6 +112,7 @@ def shop():
 
 @app.route("/events")
 def events():
+    events = brownie.event_get_all()
     return render_template("events.html", events=events)
 
 # Generate a QR code from the URL value
