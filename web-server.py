@@ -59,6 +59,11 @@ def register():
         # If registration is successful, send user to login page
         return render_template("login.html")
 
+@app.route("/purchase/<deal_id>", methods=["POST"])
+def purchase(deal_id):
+    uid = int(session["uid"])
+    brownie.user_buy_discount(uid, int(deal_id))
+
 # Route user to the login page
 @app.route("/login", methods=["GET"])
 def get_login():
