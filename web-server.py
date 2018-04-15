@@ -83,7 +83,7 @@ def login():
     except KeyError:
         # Pull the data from the POST request
         data = request.form
-        print(data)
+        print(datas)
         a = brownie.user_login(data["email"], data["password"])
         print(a)
         if a is None:
@@ -118,7 +118,6 @@ def shop():
 
 @app.route("/events")
 def events():
-    events = brownie.event_get_all()
     return render_template("events.html", events=events)
 
 # Generate a QR code from the URL value
