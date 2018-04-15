@@ -25,9 +25,9 @@ class Brownie:
                 print("Pass + Email")
                 return user_info["ID"]
             print("No Pass + Email")
-            return True
+            return False
         print("No Pass + No Email")
-        return False
+        return None
 
     def user_get_points(self, user_ID):
         user_info = self.db.USERS.find_one({"ID": user_ID})
@@ -90,7 +90,13 @@ class Brownie:
         event_info = []
         for EVENT in self.db.EVENTS.find():
             event_info.append(EVENT)
-        return None
+        return event_info
+
+    def deal_get_all(self):
+        deal_info = []
+        for DEAL in self.db.DEALS.find():
+            deal_info.append(DEAL)
+        return deal_info
 
 if __name__ == "__main__":
     test = Brownie()

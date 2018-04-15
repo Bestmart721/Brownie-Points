@@ -26,6 +26,7 @@
     .table .media .media-body span strong {
       color: #777;
     }
+
     .navbar-brand {
       position: relative;
       z-index: 2;
@@ -125,6 +126,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/rewards">Rewards</a></li>
+            <li><a href="/shop">Shop</a></li>
             <li><a href="/login">Login</a></li>
             <li><a href="/register">Register</a></li>
           </ul>
@@ -140,51 +142,19 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <table id="tableReport" class="table table-hover table-striped ">
           <tbody>
+            {% for event in events %}
             <tr class="media" id="carga_30" data-id="30">
               <td class="media-left">
-                <h2>30</h2>
               </td>
               <td class="media-body">
-                <h4 class="media-heading font-yellow text-bold hidden-xs">ELIAS DO CARMO DA SILVA</h4>
-                <h4 class="media-heading font-yellow text-bold hidden-sm hidden-md hidden-lg hidden-xl">ELIAS SILVA</h4>
-                <span><strong>Status:</strong> <span class="label label-info">Carregando</span></span>
-                <span><strong>Tipo:</strong> Conjugada</span>
-                <span class="hidden-xs"><strong>Origem:</strong> Frios Completa</span>
-                <span class="hidden-xs"><strong>Valor:</strong> R$ 9.450,00</span>
-                <span class="hidden-xs"><strong>Peso:</strong> 2.400 KG</span>
-                <span class="hidden-xs"><strong>Cubage:</strong> 3 m³</span>
+                <h4 class="media-heading font-yellow text-bold hidden-xs">{{ event.Title }}</h4>
+                <h4 class="media-heading font-yellow text-bold hidden-sm hidden-md hidden-lg hidden-xl">{{ event.Title }}</h4>
+                <span><strong>Date:</strong> <span class="label label-info">{{ event.Date }}</span></span>
+                <span><strong>Time:</strong> {{ event.Time }}</span>
+                <span class="hidden-xs"><strong>Address:</strong> {{ event.Address }}</span>
               </td>
             </tr>
-            <tr class="media" id="carga_20" data-id="20">
-              <td class="media-left">
-                <h2>20</h2>
-              </td>
-              <td class="media-body">
-                <h4 class="media-heading font-yellow text-bold hidden-xs">CELIO JOAQUIM DA COSTA</h4>
-                <h4 class="media-heading font-yellow text-bold hidden-sm hidden-md hidden-lg hidden-xl">CELIO COSTA</h4>
-                <span><strong>Status:</strong> <span class="label label-info">Carregando</span></span>
-                <span><strong>Tipo:</strong> Conjugada</span>
-                <span class="hidden-xs"><strong>Origem:</strong> Complemento Horti</span>
-                <span class="hidden-xs"><strong>Valor:</strong> R$ 9.450,00</span>
-                <span class="hidden-xs"><strong>Peso:</strong> 2.400 KG</span>
-                <span class="hidden-xs"><strong>Cubage:</strong> 3 m³</span>
-              </td>
-            </tr>
-            <tr class="media" id="carga_10" data-id="10">
-              <td class="media-left">
-                <h2>10</h2>
-              </td>
-              <td class="media-body">
-                <h4 class="media-heading font-yellow text-bold hidden-xs">ELJHONNY FERREIRA BRAZ</h4>
-                <h4 class="media-heading font-yellow text-bold hidden-sm hidden-md hidden-lg hidden-xl">ELJHONNY BRAZ</h4>
-                <span><strong>Status:</strong> <span class="label label-info">Carregando</span></span>
-                <span><strong>Tipo:</strong> Normal</span>
-                <span class="hidden-xs"><strong>Origem:</strong> Seca Completa</span>
-                <span class="hidden-xs"><strong>Valor:</strong> R$ 9.450,00</span>
-                <span class="hidden-xs"><strong>Peso:</strong> 2.400 KG</span>
-                <span class="hidden-xs"><strong>Cubage:</strong> 3 m³</span>
-              </td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
