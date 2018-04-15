@@ -59,11 +59,6 @@ def register():
         # If registration is successful, send user to login page
         return render_template("login.html")
 
-@app.route("/purchase/<deal_id>", methods=["GET"])
-def purchase(deal_id):
-    uid = session["uid"]
-    brownie.user_buy_discount(uid, deal_id)
-
 # Route user to the login page
 @app.route("/login", methods=["GET"])
 def get_login():
@@ -82,7 +77,7 @@ def login():
     except KeyError:
         # Pull the data from the POST request
         data = request.form
-        print(data)
+        print(datas)
         a = brownie.user_login(data["email"], data["password"])
         print(a)
         if a is None:
@@ -117,7 +112,6 @@ def shop():
 
 @app.route("/events")
 def events():
-    events = brownie.event_get_all()
     return render_template("events.html", events=events)
 
 # Generate a QR code from the URL value
