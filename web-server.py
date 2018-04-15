@@ -77,7 +77,7 @@ def login():
     except KeyError:
         # Pull the data from the POST request
         data = request.form
-        print(datas)
+        print(data)
         a = brownie.user_login(data["email"], data["password"])
         print(a)
         if a is None:
