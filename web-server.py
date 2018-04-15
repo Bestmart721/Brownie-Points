@@ -63,6 +63,7 @@ def register():
 def purchase(deal_id):
     uid = session["uid"]
     brownie.user_buy_discount(uid, deal_id)
+    return redirect("/shop", code=302)
 
 # Route user to the login page
 @app.route("/login", methods=["GET"])
