@@ -19,7 +19,7 @@ class Brownie:
     def user_login(self, input_email, input_password):
         user_info = self.db.USERS.find_one({"Email": input_email})
         print(user_info)
-        if user_info:
+        if user_info["Email"]:
             password = user_info['Password']
             if password == input_password:
                 print("Pass + Email")
