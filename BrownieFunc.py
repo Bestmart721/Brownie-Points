@@ -104,4 +104,3 @@ if __name__ == "__main__":
     test.make_event('test','test','test','test')
     test.make_event('test2', 'test2', 'test2', 'test2')
     test.make_event('test3', 'test3', 'test3', 'test3')
-    test.event_get_all()
