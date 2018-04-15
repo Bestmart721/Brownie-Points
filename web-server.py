@@ -77,12 +77,17 @@ def login():
     except KeyError:
         # Pull the data from the POST request
         data = request.form
+        print(datas)
         a = brownie.user_login(data["email"], data["password"])
+        print(a)
         if a is None:
+            print("Case 1")
             return render_template("login.html", e="No account exists with that email")
         if not a:
+            print("Case 2")
             return render_template("login.html", e="Incorrect password")
         session["uid"] = a
+        print("Case D")
         return render_template("rewards.html")
 
 # Route user to the rewards page
